@@ -1,4 +1,3 @@
-
 let dropdownId = document.getElementById("selectUser");
 
 window.onload = function(){
@@ -12,6 +11,7 @@ window.onload = function(){
 }
 function initTodoDropdown() {
       
+    //Add the names to dropdown
   fetch("http://localhost:8083/api/users/")
   .then(Response => Response.json())
   .then(data =>
