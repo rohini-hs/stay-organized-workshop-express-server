@@ -29,6 +29,10 @@
             <div class="blockHead">
                  <!--Add category-->
                  <br>
+                 <div class="UserId">
+                      User id : <input type="text" id ="userid">
+                 </div>
+                 <br>
                  <div class="category">
                       Category : <input type="text" id ="category">
                  </div>
@@ -51,11 +55,14 @@
                     <input type="radio" id="javascript" name="priority_set" value="high">
                     <label for="high">High</label>
                  </fieldset>
+                 <input type="button" id ="btnAddnew" value="Add" onclick="AddDetails()">
             </div>
+            
          </div>
-      <input type="button" id ="btnAdd" value="Add New Task">
-
-        <script src="./Scripts/ToDo.js">
+         
+         
+       
+        <script src="./Scripts/addToDo.js">
 
         </script>
     </body>

@@ -5,25 +5,43 @@
     box-sizing: border-box;
 }
 .container{
-    width: 100%;
-    min-height : 100vh;
-    background: linear-gradient(135deg,rgb(217, 95, 95),rgb(220, 127, 220));
-    padding: 10px;
+    width: 80%;
+  
+    background-image: url('./Images/Stepup_new.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 9%;
+    margin-left: 3%;
+    justify-content: space-evenly;
+
+   
+}
+input{
+  justify-content: left;
+  size: 20px;
+  height: 25Px;
+ 
 }
 .to-do-list{
-    width: 100%;
+    width: 80%;
     max-width: 540px;
     padding: 40px 30px 70px;
-    background-color: white;
+    background-color: rgb(162, 113, 215);
     margin: 100px auto 20px;
     border-radius: 10px;
+    margin-left: 3%;
+    text-align: center;
+    color: #050003;
+    font-size: medium;
+    font-style: oblique;
+    justify-content: space-evenly;
 
 }
 .to-do-list h4{
-    display: flex;
-    color: rgb(72, 33, 5);
+    color: rgb(7, 3, 1);
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: -30px;
 }
 .to-do-list h4 img{
     width: 5%;
@@ -37,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(243, 193, 210);
+    background: rgb(64, 11, 71);
     border-radius: 30px;
     padding-left: 30px;
     margin-bottom: 25px;
@@ -58,6 +76,7 @@ select{
     align-items: center;
 }
 
+/*
 .blockHead:after {
     color:#905f8d;
     border-left: 20px solid;
@@ -68,15 +87,20 @@ select{
     position: absolute;
     right: -20px;
     height: 59px;
-  }
+  }*/
+  
   .blockHead {
-    background-color:#be799f;
+    background-color:#8d84ee;
     width: 100%; 
     flex : 1;
     height: 250px;
-    display: inline-block;
+    /*display: inline-block;*/
     position: relative;
+    padding: 5%;
+    justify-content: space-evenly;
+    height: fit-content;
   }
+
   .blocktext{
       color:white;
       font-weight:bold;
@@ -102,3 +126,12 @@ select{
     padding: 5%;
     justify-content: space-around;
   }
+  .images{
+    padding-left: 3%;
+    border-radius: 40%;
+  }
+
+  .body{
+    background-image : url('//Images/Stepup.png');
+  }
+

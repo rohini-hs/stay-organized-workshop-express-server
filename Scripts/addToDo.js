@@ -1,78 +1,77 @@
 let dropdownId = document.getElementById("selectUser");
 
-window.onload = function(){
-
+window.onload = function () {
+    setTimeout("",10000)
     initTodoDropdown();
 
-    //get the handle of the button
-    btnDetails = document.getElementById("btnDetails");
-    btnDetails.onclick = DisplayDetails;
-
+     btnAddId = document.getElementById("btnAddnew")
+       btnAddId.onclick = AddDetails;
 }
+
 function initTodoDropdown() {
       
-    //Add the names to dropdown
-  fetch("http://localhost:8083/api/users/")
-  .then(Response => Response.json())
-  .then(data =>
-    {
-      for(let i=0; i<data.length; i++) 
-    {
-        //populate the dropdown with valid name
-        let theOption = new Option(data[i].name, data[i].id); 
-     
-        // append the option as a child of (inside) the select element
-        dropdownId.appendChild(theOption);
-
-
-    }
-
-   })
-}
-
-/*
-function populateData()
-{
-  let tableId = document.getElementById("tableTodoList")
-
-    fetch("http://localhost:8083/api/todos/")
+    fetch("http://localhost:8083/api/users/")
     .then(Response => Response.json())
-    .then(data => {
-        for(let i=0; i<data.length; i++) {
-            let row = tableId.insertRow(-1);
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-           
-            cell1.innerHTML = data[i].description;
-            cell2.innerHTML = data[i].deadline;
+    .then(data =>
+      {
+        for(let i=0; i<data.length; i++) 
+      {
+          //populate the dropdown with valid name
+          let theOption = new Option(data[i].name, data[i].id); 
+       
+          // append the option as a child of (inside) the select element
+          dropdownId.appendChild(theOption);
+  
+      }
+  
+     })
+     return 1;
+  }
+  
+
+function AddDetails(){
+ 
+
+    //collect all the dat from the form
+    let selectID = dropdownId.value;
+    let priorityID = document.querySelector('input[name="priority_set"]:checked') 
+
+    let datalog = {
+        id: selectID,
+        userid : document.getElementById("userid").value,
+        category : document.getElementById("category").value,
+        description :document.getElementById("description").value,
+        deadline : document.getElementById("deadline").value,
+       
+        priority :priorityID.checked,
         
-            const detailsCell = row.insertCell();
-
-            let anchor = document.createElement("a");
-            anchor.href = "detail.html?cid=" + data[i].id;
-            //anchor.href = "detail.html?cid=3" ;
-            anchor.text = "See details";  
-            detailsCell.appendChild(anchor);
-            
+        completed : ""
     }
-})
-} */
-
-function DisplayDetails()
-{
-  //get the name from the select box and its id 
-  let selectName= dropdownId.value;
-
-  //fetch the details of this user
-  fetch("http://localhost:8083/api/todos/"+selectName)
-  .then(Response => Response.json())
-  .then(data =>
-    {
-    let showvalue = document.getElementById("showvalue");
-
-        showvalue.innerHTML = data.description ;
-        console.log(data.deadline)
-    
-  })
-
+    let result = btnAddClicked(datalog);
+    console.log(result);
 }
+
+function btnAddClicked(bodyData) {
+
+    //get the name from the select box and its id 
+   
+
+    // fetch student #1 (hard-coded) to be updated
+   
+      fetch("http://localhost:8083/api/todos/", {
+            method: "POST",
+            body: JSON.stringify(bodyData),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(response => response.json())
+        .then(json => {
+            // If the POST finishes successfully, display a message
+            // with the newly assigned id
+            let message = "Tasks to " + json.name + "is added";
+            
+            return message
+        });
+}
+
