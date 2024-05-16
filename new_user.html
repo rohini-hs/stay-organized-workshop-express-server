@@ -4,6 +4,7 @@
     <title>
         Add ToDoList
     </title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <!--nav bar-->
@@ -44,6 +45,7 @@
         }
 
         @media (max-width: 400px) {
+            
             .form {
 
                 margin: 0 auto;
@@ -68,7 +70,7 @@
             }
         }
 
-        /*form*/
+            /*form*/
 
 
         #btnAddnewUser {
@@ -171,6 +173,7 @@
             }
 
             .hamburger-menu {
+                /*display: block;*/
                 display: block;
                 z-index: 2;
             }
@@ -230,7 +233,7 @@
 
     <div class="container">
         <div class="to-do-list">
-            <h4>Add New User <img src="./Images/todo list.jpeg"> </h4>
+            <h3>Add New User  </h3>
 
 
             <!--Add the dropdown button-->
@@ -272,9 +275,8 @@
                 <input type="button" id="btnAddnewUser" value="Add New User">
             </div>
 
-            <script src="./Scripts/addNewUser.js">
-
-            </script>
+            <script src="./Scripts/addNewUser.js"></script>
+           
 </body>
 
 </HTML>

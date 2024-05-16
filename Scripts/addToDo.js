@@ -1,6 +1,9 @@
 let dropdownId = document.getElementById("selectUser");
 
+
+
 window.onload = function () {
+    myFunction();
     setTimeout("",10000)
     initTodoDropdown();
 
@@ -38,7 +41,7 @@ function AddDetails(){
 
     let datalog = {
         id: selectID,
-        userid : document.getElementById("userid").value,
+        userid : dropdownId.userid,
         category : document.getElementById("category").value,
         description :document.getElementById("description").value,
         deadline : document.getElementById("deadline").value,
@@ -73,5 +76,16 @@ function btnAddClicked(bodyData) {
             
             return message
         });
+}
+
+function myFunction()
+{
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+            const nav = document.querySelector(".nav");
+
+            hamburgerMenu.addEventListener("click", () => {
+                nav.classList.toggle("active")
+            });
+            
 }
 

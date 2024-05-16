@@ -1,6 +1,7 @@
 let dropdownId = document.getElementById("selectUser");
 
 window.onload = function () {
+    myFunction();
     setTimeout("",10000)
     
 
@@ -45,5 +46,14 @@ function btnAddUserClicked(bodyData) {
             
             return message
         });
+}
+function myFunction()
+{
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+            const nav = document.querySelector(".nav");
+
+            hamburgerMenu.addEventListener("click", () => {
+                nav.classList.toggle("active")
+            });
 }
 

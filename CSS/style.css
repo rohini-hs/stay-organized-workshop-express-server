@@ -39,9 +39,9 @@ input{
 
 }
 .to-do-list h4{
-    color: rgb(7, 3, 1);
+    color: rgb(234, 166, 132);
     align-items: center;
-    margin-bottom: -30px;
+    margin-bottom: -0px;
 }
 .to-do-list h4 img{
     width: 5%;
@@ -55,7 +55,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(64, 11, 71);
+    background: rgb(128, 33, 141);
     border-radius: 30px;
     padding-left: 30px;
     margin-bottom: 25px;
@@ -123,8 +123,10 @@ select{
   .priority{
     align-items: center;
     text-align: center;
-    padding: 5%;
+    padding-right: 15%;
+    padding: 3%;
     justify-content: space-around;
+
   }
   .images{
     padding-left: 3%;
