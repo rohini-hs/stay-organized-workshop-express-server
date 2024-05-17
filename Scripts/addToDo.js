@@ -40,8 +40,8 @@ function AddDetails(){
     let priorityID = document.querySelector('input[name="priority_set"]:checked') 
 
     let datalog = {
-        id: selectID,
-        userid : dropdownId.userid,
+        id: "",
+        userid : selectID,
         category : document.getElementById("category").value,
         description :document.getElementById("description").value,
         deadline : document.getElementById("deadline").value,
@@ -58,6 +58,8 @@ function btnAddClicked(bodyData) {
 
     //get the name from the select box and its id 
    
+    let dropdownId = document.getElementById("selectUser");
+    let selectName = dropdownId.name;
 
     // fetch student #1 (hard-coded) to be updated
    
@@ -72,9 +74,10 @@ function btnAddClicked(bodyData) {
         .then(json => {
             // If the POST finishes successfully, display a message
             // with the newly assigned id
-            let message = "Tasks to " + json.name + "is added";
+            let message = "Tasks to user id: " + dropdownId.value + " is added successfully";
             
-            return message
+            let messageid = document.getElementById("message");
+            messageid.innerHTML = message;
         });
 }
 

@@ -42,9 +42,9 @@ function btnAddUserClicked(bodyData) {
         .then(json => {
             // If the POST finishes successfully, display a message
             // with the newly assigned id
-            let message = "New users added! " ;
+            let message = document.getElementById("message") ;
+            message.innerHTML= ("New User "+ bodyData.username + " added successfully!")
             
-            return message
         });
 }
 function myFunction()
