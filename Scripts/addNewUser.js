@@ -1,15 +1,12 @@
 let dropdownId = document.getElementById("selectUser");
 
 window.onload = function () {
+   
     myFunction();
     setTimeout("",10000)
-    
-
      btnAddId = document.getElementById("btnAddnewUser")
      btnAddId.onclick = AddUserDetails;
 }
-
-
 
 function AddUserDetails(){
  
@@ -26,8 +23,16 @@ function AddUserDetails(){
 
 function btnAddUserClicked(bodyData) {
 
-    //get the name from the select box and its id 
-   
+    //check if password and retype passwords are same
+    let passString = document.getElementById("AddNewUserPassword");
+    let checkPassString = document.getElementById("AddNewUserRePassword");
+    if (passString.value != checkPassString.value){
+         window.alert("Passwords mismatch!");
+        return;
+    }
+
+     //check the users
+    CheckUser();
 
     // fetch student #1 (hard-coded) to be updated
    
@@ -57,3 +62,26 @@ function myFunction()
             });
 }
 
+function CheckUser() {
+    let nameString = document.getElementById("addNewName");
+
+    // check if the user is already present 
+    fetch("http://localhost:8083/api/users/")
+   .then(Response => Response.json())
+   .then(data =>
+     {
+       for(let i=0; i<data.length; i++) 
+     {
+        
+      if (data[i].name == nameString.value){
+        alert("User already exists")
+       return;
+      }
+ 
+     }
+ 
+    })
+    }
+  
+  
+  

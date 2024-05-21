@@ -46,7 +46,7 @@ function AddDetails(){
         description :document.getElementById("description").value,
         deadline : document.getElementById("deadline").value,
        
-        priority :priorityID.checked,
+        priority :priorityID.value,
         
         completed : ""
     }

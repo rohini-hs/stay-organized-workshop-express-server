@@ -8,19 +8,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
 
+    <!--table grid-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--table grid-->
+
+
     <!--nav bar-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!--nav bar-->
 
     <style>
-        #btnDetails{
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(128, 33, 141);
+            border-radius: 30px;
+            padding-left: 30px;
+            margin-bottom: 25px;
+            margin-left: 10%;
+            max-width: 80%;
+            text-align: left;
+        }
+
+        #btnDetails {
             margin-top: 5%;
             background-color: rgb(207, 171, 241);
             padding: 3%;
             height: 6%;
-
+            
         }
+
+        .containerTable {
+            width: 75%;
+            background-color: rgb(158, 158, 226);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 3%;
+            justify-content: space-evenly;
+            border: 1px;
+            border-color: #4D4DDB;
+        }
+
+        select {
+            flex: .55;
+            outline: none;
+            background: rgb(237, 143, 143);
+            padding: 10px;
+            margin-left: 0%;
+            margin-right: -9%;
+            font-weight: 50px;
+            font-size: medium;
+            border-radius: 30px;
+            padding-left: 20px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            align-items: left;
+        }
+
+        #myTable {
+            text-align: left;
+        }
+
+
         body {
             background-image: url('./Images/Stepup_new.png');
             background-position: center;
@@ -60,23 +114,6 @@
 
         }
 
-        button {
-
-            outline: none;
-            background: rgb(211, 170, 240);
-            padding: 10px;
-            margin-top: 5%;
-            margin-left: 20%;
-            font-weight: 50px;
-            font-size: medium;
-            border-radius: 30px;
-            padding-left: 20px;
-            padding-left: 0px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            align-items: center;
-            border: none;
-        }
-
         #textSteup {
             font-style: italic;
             /*font-weight: 100;*/
@@ -91,22 +128,6 @@
         }
 
         @media only screen and (max-width: 600px) {
-            button {
-                outline: none;
-                background: rgb(211, 170, 240);
-                padding: 10px;
-
-                margin-left: 30%;
-                font-weight: 50px;
-                font-size: medium;
-                border-radius: 30px;
-                padding-left: 20px;
-                padding-left: 0px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                align-items: center;
-                border: none;
-                margin-top: -2%;
-            }
 
             #image {
                 margin-left: 18%;
@@ -243,21 +264,23 @@
                 right: 0;
             }
 
+            select {
+                width: 200%;
+                padding-left: -1%;
+                text-align: left;
+                margin-left: -10%;
+            }
+
+            .row h4 {
+                margin-left: -20%;
+                text-align: left;
+            }
+
         }
 
-        /*nav bar */
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        td,tr,
-        th {
-            border: 1px solid #000000;
-            text-align: left;
-            padding: 8px;
-        }
+        /*table related */
     </style>
 
 
@@ -275,8 +298,6 @@
 
                     <li class="nav-link"><a href="new-todo.html">New Task</a></li>
                     <li class="nav-link"><a href="user-todos.html">ToDo-list</a></li>
-
-
                 </ul>
             </nav>
             <span class="hamburger-menu  material-symbols-outlined">menu</span>
@@ -285,38 +306,50 @@
 
     <!--nav bar-->
 
-  
 
-    <div class="container">
+    <div class="containerNEW">
+
+
         <div class="to-do-list">
 
-         <h3>To-Do lists</h3>
-         <br>
-         
             <!--Add the dropdown button-->
+            <h3><b>To do lists</h3></b>
+            <br>
+
             <div class="row">
-                <h4> Select a user: </h4> <br><select id="selectUser"></select>
+                <h4 style="margin-left: -30%;"> Select a user: </h4> 
+                <br>
+            
+                <select id="selectUser" style="margin-right: -30%;"></select>
                 <div>
 
                 </div>
             </div>
             <input type="button" id="btnDetails" value="Show Details">
-            <table id="document_items_table" ; border="1">
-                <thead class="myTable" >
+        </div>
+    </div>
+    <div class="containerTable">
+        <div class="table-responsive">
+            <table class="table" id="table">
+                <thead>
                     <tr>
-
                         <th>Description</th>
                         <th>Deadline</th>
                         <th>Category</th>
                         <th>Priority</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+
             </table>
+        </div>
+    </div>
 
-            <script src="./Scripts/ToDo.js">
+    </table>
 
-            </script>
+    <script src="./Scripts/ToDo.js">
+
+    </script>
 </body>
 
 </HTML>

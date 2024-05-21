@@ -5,6 +5,7 @@ window.onload = function () {
 
   initTodoDropdown();
   myFunction();
+ 
   //get the handle of the button
   btnDetails = document.getElementById("btnDetails");
   btnDetails.onclick = DisplayDetails;
@@ -34,16 +35,16 @@ function initTodoDropdown() {
 function DisplayDetails() {
   //get the name from the select box and its id 
   let selectName = dropdownId.value;
-  let tableId = document.getElementById("document_items_table")
+  let tableId = document.getElementById("table")
 
-  var oRows = document.getElementById('document_items_table').getElementsByTagName('tr');
+  var oRows = tableId.getElementsByTagName('tr');
   var iRowCount = oRows.length;
   
   if (iRowCount > 1) {
     for (let i = 1; i < iRowCount; i++) {
-      tableId.deleteRow(i);
-
-    }     
+     
+      tableId.deleteRow(1);
+    }  
   }
 
   //fetch the details of this user
@@ -59,10 +60,12 @@ function DisplayDetails() {
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
+        let cell5 = row.insertCell(4);
         cell1.innerHTML = data[i].description;
         cell2.innerHTML = data[i].deadline;
         cell3.innerHTML = data[i].category;
         cell4.innerHTML = data[i].priority;
+        cell5.innerHTML = data[i].completed;
 
       }     
     })
@@ -75,5 +78,12 @@ function DisplayDetails() {
         hamburgerMenu.addEventListener("click", () => {
           nav.classList.toggle("active")
         });
-      
       }
+
+         
+        
+      
+          
+
+      
+    
