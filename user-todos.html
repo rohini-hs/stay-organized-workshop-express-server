@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css”/>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--table grid-->
 
 
@@ -21,6 +25,10 @@
     <!--nav bar-->
 
     <style>
+        .table{
+             visibility: hidden;
+             border-radius: 50%;
+        }
         .row {
             display: flex;
             align-items: center;
@@ -52,6 +60,7 @@
             justify-content: space-evenly;
             border: 1px;
             border-color: #4D4DDB;
+            visibility: hidden;
         }
 
         select {
@@ -328,7 +337,7 @@
             <input type="button" id="btnDetails" value="Show Details">
         </div>
     </div>
-    <div class="containerTable">
+    <div class="containerTable" id ="containerTable">
         <div class="table-responsive">
             <table class="table" id="table">
                 <thead>
@@ -347,7 +356,7 @@
 
     </table>
 
-    <script src="./Scripts/ToDo.js">
+    <script src="./Scripts/ToDo.js" >
 
     </script>
 </body>
