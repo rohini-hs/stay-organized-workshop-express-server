@@ -4,6 +4,8 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
+
+
 .container{
     width: 80%;
     background-image: url('./Images/Stepup_new.png');

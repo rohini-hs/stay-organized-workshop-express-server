@@ -1,15 +1,38 @@
 let dropdownId = document.getElementById("selectUser");
 
-
+let catdropdownId = document.getElementById("category");
 
 window.onload = function () {
     myFunction();
     setTimeout("",10000)
     initTodoDropdown();
+    initTodoCategory();
 
      btnAddId = document.getElementById("btnAddnew")
        btnAddId.onclick = AddDetails;
 }
+
+
+function initTodoCategory() {
+      
+    fetch("http://localhost:8083/api/categories/")
+    .then(Response => Response.json())
+    .then(data =>
+      {
+        for(let i=0; i<data.length; i++) 
+      {
+          //populate the dropdown with valid name
+          let theOption = new Option(data[i].name, data[i].id); 
+       
+          // append the option as a child of (inside) the select element
+          catdropdownId.appendChild(theOption);
+  
+      }
+  
+     })
+     return 1;
+  }
+  
 
 function initTodoDropdown() {
       

@@ -64,7 +64,9 @@ function DisplayDetails() {
       
       
       //Add a dynamic table
-
+      if (data.length==0){
+        alert("No records found!")
+      }
 
       for (let i = 0; i < data.length; i++) {
         let row = tableId.insertRow(-1);
@@ -116,7 +118,7 @@ function DisplayDetails() {
         detailsCell.appendChild(btnDetailsnew);
 
         // Insert a edit button 
-        const editCell = row.insertCell();
+       /* const editCell = row.insertCell();
         let btnEdit = document.createElement('button');
         btnEdit.className='editClass'  ;
         btnEdit.style.backgroundColor = 'transparent';
@@ -125,7 +127,7 @@ function DisplayDetails() {
         btnEdit.id = 'btnEditId';
         btnEdit.innerText = 'Edit';  
         btnEdit.onclick = handleButtonEdit;
-        editCell.appendChild(btnEdit);
+        editCell.appendChild(btnEdit);*/
 
       }     
     })
@@ -214,13 +216,23 @@ function initExampleModal() {
 //function to show status edit details
 
 function handleButtonEdit() {
-
-
+  let CurrentStatus = '';
+  let NewStatus = '';
    
-     var statusStr = this.parentNode.parentNode.childNodes[4].innerText;
+     var statusStr = this.parentNode.parentNode.childNodes[4].innerHTML;
 
+     const substr = 'bi bi-x-circle';
+
+  if (statusStr.includes(substr) ){
+    CurrentStatus = "Incomplete";
+    NewStatus = "Completed ?" ;
+  }
+     else if(statusStr.includes('bi bi-check-circle h4')){
+    CurrentStatus = "Completed";
+     NewStatus = "Incomplete ?" ;
+  }
     
- 
+
    var exampleModal = getExampleModal();
  
    // Init the modal if it hasn't been already.
@@ -234,9 +246,10 @@ function handleButtonEdit() {
          '</button>' +
        '</div>' +
        '<div class="modal-body" style="background-color:rgb(158, 198, 233);">' +
-       '<ul>'+ '<li> Description: ' + dsc + '</li>' + '</br>' + '<li> Deadline: '+ endl + '</li>' + '</br>' + '<li> Category: '+ catgy + '</li> ' +'</br>' + 
-        
-       '</div>' +
+       '<ul>'+ '<li> Current Status :' + CurrentStatus + '</li>' + '</br>' + '<li> Change to: '+ NewStatus + '</li>' + '</br>' +    
+         '<button type="button" class="btnYes" onclick = "updateStatusFunc" style = "width :7% ; align-items: center;margin-left: 10%; overscroll-behavior-block: rgb(147, 147, 235);">Yes</button >'  + '<button type="button" class="btnNo" style = "width :7% ; align-items: center;margin-left: 5%; overscroll-behavior-block: rgb(147, 147, 235);" data-dismiss="modal">No</button>' + 
+         
+      '</div>' + '<br>' + 
        '<div class="modal-footer" style="background-color:rgb(84, 188, 230);">' +
          '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
        
@@ -248,4 +261,8 @@ function handleButtonEdit() {
    // Show the modal.
    jQuery(exampleModal).modal('show');
  
+ }
+ function updateStatusFunc()
+ {
+
  }

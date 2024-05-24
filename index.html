@@ -7,6 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!--nav bar-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -27,8 +33,8 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
             color: rgb(17, 17, 105);
             font-size: 400%;
-            margin-left: 10%;
-            margin-top: 5%;
+            margin-left: 12%;
+            margin-top: 3%;
         }
 
         #QuickTime {
@@ -77,10 +83,9 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             /*margin-left: 15%;*/
             padding-left: 10%;
-            margin-top: 5%;
-            max-width: 40.625rem;
+            margin-top: 2%;
+            max-width: 70.625rem;
             font-size: 1.25vw;
-
 
         }
 
@@ -145,7 +150,7 @@ header {
     /*background: #b178c7;*/
     background: rgb(115, 70, 210);
     color: white;
-
+  
     padding: .5rem 0;
 }
 
@@ -246,14 +251,20 @@ header {
     
             <nav class="nav">
                 <ul class="nav--ul__one">
-                    <li class="nav-link"><a href="#">Home</a></li>
-                    <li class="nav-link"><a href="#">About Us</a></li>
-                    <li class="nav-link"><a href="new_user.html">New User</a></li>
                     
-                    <li class="nav-link"><a href="new-todo.html">New Task</a></li>
-                    <li class="nav-link"><a href="user-todos.html">ToDo-list</a></li>
-                    
-                    
+                    <li class="nav-link"><a href="#"><i class="bi bi-house-door-fill" style="fill: green;"></i> Home</a></li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-file-person-fill"></i> About Us</a></li>
+            
+                    <div class="dropdown"> 
+                        <button class="dropdownBtn" type="button" data-toggle="dropdown" style="background-color: transparent; margin-top: -10px; height: -100px;width: 200px;margin-left: -30px;"><i class="bi bi-card-checklist"></i> Manage Tasks
+                        </button>
+                       
+                        <ul class="dropdown-menu">
+                            <li class="nav-link"><a href="new_user.html"><i class="bi bi-people"></i> User Registration</a></li>
+                            <li class="nav-link"><a href="new-todo.html"><i class="bi bi-view-list"></i></i> Add Task</a></li>
+                            <li class="nav-link"><a href="user-todos.html"><i class="bi bi-card-checklist"></i> Awaiting Tasks</a></li>
+                        </ul>
+                    </div>
                 </ul>
             </nav>
             <span class="hamburger-menu  material-symbols-outlined">menu</span>
@@ -264,6 +275,7 @@ header {
 
     <div>
         <div>
+            <img src = "./Images/dd logo.jpeg" style="height: 50px;margin-top: 20;margin-bottom: -50px;margin-left: 350;">
             <p id="StepUp">DAILY DIGEST</p>
             <p id="QuickTime"><i><b>Your Partner to Stay Organised</b></i></p>
         </div>
@@ -276,29 +288,35 @@ header {
 
     <p id="textSteup">
 
-        Daily Digest makes it frictionless to get all your tasks
+        Daily Digest makes it frictionless to get all your tasks 
         out of your head and organized in one trusted place.
 
     </p>
-    </div>
-    </div>
+ 
 
     <div class="row2">
         <button
-            style="color: rgb(61, 4, 100);text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: larger;padding: 1%;">
+            style="color: rgb(61, 4, 100);text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: larger;padding: 1%;margin-top : 2%">
             Read More..</button>
         <div>
 
 <script>
+
+  
+
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const nav = document.querySelector(".nav");
     
     hamburgerMenu.addEventListener("click", () => {
     nav.classList.toggle("active")
     
-});
+    });
+
+
 </script>
 
 </body>
+
+
 
 </html>

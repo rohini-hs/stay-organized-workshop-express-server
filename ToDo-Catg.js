@@ -18,7 +18,7 @@ window.onload = function () {
 
 function initTodoDropdown() {
 
-  fetch("http://localhost:8083/api/users/")
+  fetch("http://localhost:8083/api/categories")
     .then(Response => Response.json())
     .then(data => {
       for (let i = 0; i < data.length; i++) {
@@ -52,7 +52,7 @@ function DisplayDetails() {
   }
 
   //fetch the details of this user
-  fetch("http://localhost:8083/api/todos/byuser/" + selectName)
+  fetch("http://localhost:8083/api/categories")
     .then(Response => Response.json())
     .then(data => {
      
@@ -64,7 +64,9 @@ function DisplayDetails() {
       
       
       //Add a dynamic table
-
+      if (data.length==0){
+        alert("No records found!")
+      }
 
       for (let i = 0; i < data.length; i++) {
         let row = tableId.insertRow(-1);
@@ -114,6 +116,19 @@ function DisplayDetails() {
         btnDetailsnew.innerText = 'Details';  
         btnDetailsnew.onclick = handleButtonClick;
         detailsCell.appendChild(btnDetailsnew);
+
+        // Insert a edit button 
+       /* const editCell = row.insertCell();
+        let btnEdit = document.createElement('button');
+        btnEdit.className='editClass'  ;
+        btnEdit.style.backgroundColor = 'transparent';
+        btnEdit.style.color = 'blue';
+        btnEdit.style.borderColor = 'transparent';
+        btnEdit.id = 'btnEditId';
+        btnEdit.innerText = 'Edit';  
+        btnEdit.onclick = handleButtonEdit;
+        editCell.appendChild(btnEdit);*/
+
       }     
     })
     
@@ -130,6 +145,8 @@ function DisplayDetails() {
         });
       }
 
+
+      //Function to show detail  list
 
  function handleButtonClick() {
 
@@ -194,5 +211,58 @@ function initExampleModal() {
   document.body.appendChild(modal);
   return modal;
 }
-        
+       
+
+//function to show status edit details
+
+function handleButtonEdit() {
+  let CurrentStatus = '';
+  let NewStatus = '';
+   
+     var statusStr = this.parentNode.parentNode.childNodes[4].innerHTML;
+
+     const substr = 'bi bi-x-circle';
+
+  if (statusStr.includes(substr) ){
+    CurrentStatus = "Incomplete";
+    NewStatus = "Completed ?" ;
+  }
+     else if(statusStr.includes('bi bi-check-circle h4')){
+    CurrentStatus = "Completed";
+     NewStatus = "Incomplete ?" ;
+  }
     
+
+   var exampleModal = getExampleModal();
+ 
+   // Init the modal if it hasn't been already.
+   if (!exampleModal) { exampleModal = initExampleModal(); }
+ 
+   var html =
+       '<div class="modal-header" style="background-color: black;">' +
+         '<h5 class="modal-title" id="exampleModalLabel" style="color:white;" >Task Details</h5>' +
+         '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+           '<span aria-hidden="true">&times;</span>' +
+         '</button>' +
+       '</div>' +
+       '<div class="modal-body" style="background-color:rgb(158, 198, 233);">' +
+       '<ul>'+ '<li> Current Status :' + CurrentStatus + '</li>' + '</br>' + '<li> Change to: '+ NewStatus + '</li>' + '</br>' +    
+         '<button type="button" class="btnYes" onclick = "updateStatusFunc" style = "width :7% ; align-items: center;margin-left: 10%; overscroll-behavior-block: rgb(147, 147, 235);">Yes</button >'  + '<button type="button" class="btnNo" style = "width :7% ; align-items: center;margin-left: 5%; overscroll-behavior-block: rgb(147, 147, 235);" data-dismiss="modal">No</button>' + 
+         
+      '</div>' + '<br>' + 
+       '<div class="modal-footer" style="background-color:rgb(84, 188, 230);">' +
+         '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+       
+       '</div>';
+ 
+ 
+   setExampleModalContent(html);
+ 
+   // Show the modal.
+   jQuery(exampleModal).modal('show');
+ 
+ }
+ function updateStatusFunc()
+ {
+
+ }
