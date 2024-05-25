@@ -20,20 +20,22 @@
     <!--nav bar-->
 
     <style>
+
         /* footer */
         footer {
             display: flex;
             justify-content: space-evenly;
-            background-color: rgb(115, 70, 210);
+            background-color: rgb(35, 127, 135);
             color: #fff;
-
+            top : 0%;
             position: relative;
-            bottom: -45px;
+            bottom: -120px;
 
         }
 
         .column {
             width: 27%;
+            margin-left: 12%;
         }
 
         p {
@@ -54,7 +56,8 @@
         /*   */
 
         body {
-            background-image: url('./Images/Stepup_new.png');
+            /*background-image: url('./Images/Stepup_new.png');*/
+            background-image: linear-gradient(to bottom right, white, rgb(121, 183, 202));
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -64,9 +67,10 @@
 
             font-family: Georgia, 'Times New Roman', Times, serif;
             color: rgb(17, 17, 105);
-            font-size: 400%;
-            margin-left: 12%;
-            margin-top: 5%;
+            font-size: 500%;
+            margin-left: 50%;
+            margin-top: 8%;
+            margin-right: 40%;
         }
 
         #QuickTime {
@@ -74,39 +78,36 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
             color: rgb(17, 17, 105);
             font-size: 100%;
-            margin-left: 20%;
+            margin-left: 70%;
+            width: 100%;
         }
 
-        #image {
-            margin-left: 18%;
-            margin-top: 3%;
-        }
 
         #image img {
             border-radius: 10%;
             background-color: transparent;
             height: 200;
             justify-content: center;
-
+            margin-left :75%;
             display: flex;
+            margin-top: 2%;
 
         }
 
         button {
-
+            color: white;
             outline: none;
-            background: rgb(211, 170, 240);
-            padding: 10px;
+            background: rgb(19, 72, 84);
+            
             margin-top: 5%;
-            margin-left: 20%;
+            margin-left: 460px;
             font-weight: 50px;
             font-size: medium;
-            border-radius: 30px;
-            padding-left: 20px;
-            padding-left: 0px;
+            border-radius: 20px;
+            padding-left: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            align-items: center;
-            border: none;
+            width :30%;
+             border: none;
         }
 
         #textSteup {
@@ -114,21 +115,26 @@
             /*font-weight: 100;*/
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             /*margin-left: 15%;*/
-            padding-left: 10%;
-            margin-top: 5%;
-            max-width: 70.625rem;
-            font-size: 1.25vw;
-
+            width: 100%;
+            margin-top: 3%;
+          align-content: center;
+            font-size: 1vw;
+            margin-left: 47%;
+          
         }
 
         @media only screen and (max-width: 601px) {
-            #logoclass{
+            aside{
+                display: none;
+            }
+
+            #logoclass {
                 display: none;
             }
 
             button {
                 outline: none;
-                background: rgb(211, 170, 240);
+                background: rgb(19, 72, 84);
                 padding: 10px;
 
                 margin-left: 30%;
@@ -144,8 +150,9 @@
             }
 
             #image {
-                margin-left: 18%;
+                margin-left: 50%;
                 margin-top: 10%;
+               
             }
 
             #textSteup {
@@ -153,10 +160,10 @@
                 /*font-weight: 100;*/
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 /*margin-left: 15%;*/
-                padding: 10%;
+                padding: 5%;
                 margin-top: -2%;
                 max-width: 40.625rem;
-                margin-left: 5%;
+                margin : 50%;
                 font-size: 3vw;
 
 
@@ -186,7 +193,7 @@
 
         header {
             /*background: #b178c7;*/
-            background: rgb(115, 70, 210);
+            background: rgb(35, 127, 135);
             color: white;
 
             padding: .5rem 0;
@@ -237,6 +244,20 @@
         }
 
         @media (max-width: 400px) {
+
+            aside{
+                display: none;
+            }
+            #QuickTime {
+                 margin-left: 18%;
+                }
+
+            #image img {
+           
+            margin-left :-70%;
+       
+
+        }
             #StepUp {
 
                 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -248,6 +269,7 @@
 
             #logoclass {
                 display: none;
+
             }
 
             .nav-container .logo {
@@ -313,16 +335,16 @@
 
                     <div class="dropdown">
                         <button class="dropdownBtn" type="button" data-toggle="dropdown"
-                            style="background-color: transparent; margin-top: -10px; height: -100px;width: 200px;margin-left: -30px;"><i
+                            style="background-color: transparent; margin-top: -0px; height: -100px;width: 200px;margin-left: -30px;"><i
                                 class="bi bi-card-checklist"></i> Manage Tasks
                         </button>
 
                         <ul class="dropdown-menu">
                             <li class="nav-link"><a href="new_user copy.html"><i class="bi bi-people"></i> User
                                     Registration</a></li>
-                            <li class="nav-link"><a href="new-todo.html"><i class="bi bi-view-list"></i></i> Add
+                            <li class="nav-link"><a href="new-todo copy 2.html"><i class="bi bi-view-list"></i></i> Add
                                     Task</a></li>
-                            <li class="nav-link"><a href="user-todos.html"><i class="bi bi-card-checklist"></i> Awaiting
+                            <li class="nav-link"><a href="user-todos copy.html"><i class="bi bi-card-checklist"></i> Awaiting
                                     Tasks</a></li>
                         </ul>
                     </div>
@@ -330,10 +352,11 @@
             </nav>
             <span class="hamburger-menu  material-symbols-outlined">menu</span>
             <div class="socialmedia" style="align-items: left;">
-                <h5>Connect on
+                <h4>Sign In 
+                    <i class="bi bi-people h3"></i>
                     <i class="bi bi-facebook h3"></i>
                     <i class="bi bi-twitter h3"></i>
-                    <i class="bi bi-instagram h3"></i></h5>
+                    <i class="bi bi-instagram h3"></i></h4>
             </div>
 
         </div>
@@ -341,33 +364,56 @@
 
     <!--nav bar-->
 
-    <div>
+<div class="containerMainbody">
+<aside>
+ 
+        <section>
+          
+              <nav>
+                <ul class="center" style="align-items: left;text-align: left;margin-left: 3.5%;">
+                <br>
+                  <a><h4><i class="bi bi-person-square" style="color: red;"></i> Hi Ian..</h4></a>
+                  <hr style="border: 1px solid rgb(1, 5, 1);">
+                  <br>
+                  <a><li><i class="bi bi-search" style="color: black;""></i> Search</li></a><br>
+                  <a><li><i class="bi bi-inbox" style="color: blue;""></i> Inbox</li></a><br>
+                  <a><li><i class="bi bi-list-task" style="color: green;""></i>  Completed Tasks</li></a><br>
+                  <a><li><i class="bi bi-plus-square" style="color: pink;""></i> Upcoming Tasks</li></a><br>
+                  <a><li><i class="bi bi-sign-dead-end" style="color: red;""></i> Arriving deadlines </li></a><br>
+                </ul>
+              </nav>
+            
+          </section>
+  
+</aside>
+<main>
+    <div class="containerBody" style="align-items: center;">
         <div>
             <img id="logoclass" src="./Images/dd logo.jpeg">
-            <p id="StepUp">DAILY DIGEST</p>
+            <p id="StepUp" style="width : 100%">DAILY  DIGEST</p>
             <p id="QuickTime"><i><b>Your Partner to Stay Organised</b></i></p>
         </div>
         <div id="image">
-            <img src="./Images/todolist.jpeg">
+            <img src="./Images/todolist.png" >
 
         </div>
-
     </div>
+    
 
-    <p id="textSteup">
+        <div id="textSteup" >
 
-        Daily Digest makes it frictionless to get all your tasks
-        out of your head and organized in one trusted place.
+            <h4>Daily Digest makes it frictionless to get all your tasks
+            out of your head and organized in one trusted place.</h4>
 
-    </p>
+            </div>
 
 
-    <div class="row2">
-        <button
-            style="color: rgb(61, 4, 100);text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: larger;padding: 1%;margin-top : 2%">
-            Read More..</button>
-        <div>
-
+        <div class="row2">
+            <button
+                style="color: white;text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: larger;padding: 1%;margin-top : 2%">
+                Read More..</button>
+            <div>
+           
             <script>
                 const hamburgerMenu = document.querySelector(".hamburger-menu");
                 const nav = document.querySelector(".nav");
@@ -377,7 +423,8 @@
 
                 });
             </script>
-
+</main>
+</div>
 </body>
 
 <footer>

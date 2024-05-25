@@ -25,12 +25,7 @@ function AddUserDetails() {
             username: document.getElementById("AddNewUserName").value,
             password: document.getElementById("AddNewUserPassword").value,
         }
-          /*checkUser();
-        if (count != 1) {
-               btnAddUserClicked(datalog);
-        } else {
-            return;
-        }*/
+          
         btnAddUserClicked(datalog);
     } else {
         alert("One or more fields are empty");

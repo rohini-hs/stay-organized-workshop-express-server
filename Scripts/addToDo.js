@@ -61,20 +61,28 @@ function AddDetails(){
     //collect all the dat from the form
     let selectID = dropdownId.value;
     let priorityID = document.querySelector('input[name="priority_set"]:checked') 
+    let description = document.getElementById("description").value;
+    let deadline = document.getElementById("deadline").value;
+    let priority = priorityID.value;
 
-    let datalog = {
+    if (description != '' && deadline != '' && priority != '') {
+      let datalog = {
         id: "",
         userid : selectID,
         category : document.getElementById("category").value,
         description :document.getElementById("description").value,
         deadline : document.getElementById("deadline").value,
-       
         priority :priorityID.value,
-        
         completed : ""
-    }
-    let result = btnAddClicked(datalog);
-    console.log(result);
+      }
+        let result = btnAddClicked(datalog);
+        console.log(result);
+    
+   } else {
+      alert("One or more fields are empty");
+      return;
+  }
+  
 }
 
 function btnAddClicked(bodyData) {
@@ -97,7 +105,7 @@ function btnAddClicked(bodyData) {
         .then(json => {
             // If the POST finishes successfully, display a message
             // with the newly assigned id
-            let message = "Tasks to user id: " + dropdownId.value + " is added successfully";
+            let message = "Tasks to user is added successfully";
             
             let messageid = document.getElementById("message");
             messageid.innerHTML = message;

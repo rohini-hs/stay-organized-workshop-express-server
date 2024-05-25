@@ -2,7 +2,7 @@ let dropdownId = document.getElementById("selectUser");
 let tableelement = document.getElementById("table");
 let containerTable = document.getElementById("containerTable");
 let buttondetails = document.getElementById("btnModal");
-
+let taskid = 0;
 
 window.onload = function () {
 
@@ -14,6 +14,14 @@ window.onload = function () {
   btnDetails.onclick = DisplayDetails;
   
 
+  $('#myModal').on('shown.bs.modal', function (event) {
+    $("#newBtn").trigger("click");  
+   });
+   
+    $("#newBtn").on("click",function(){
+    alert("button inside modal clicked");
+    
+    })
 }
 
 function initTodoDropdown() {
@@ -75,34 +83,37 @@ function DisplayDetails() {
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
         let cell5 = row.insertCell(4);
-        cell1.innerHTML = data[i].description;
-        cell2.innerHTML = data[i].deadline;
-        cell3.innerHTML = data[i].category;
+        let cell6 = row.insertCell(5);
+        cell1.innerHTML = data[i].id;
+        cell2.innerHTML = data[i].description;
+        cell3.innerHTML = data[i].deadline;
+        cell4.innerHTML = data[i].category;
+      
 
         if (data[i].priority == 'High'){
           
-          cell4.innerHTML = '<i class="bi bi-thermometer-high h4" style = "color:red;"></i>'
+          cell5.innerHTML = '<i class="bi bi-thermometer-high h4" style = "color:red;"></i>'
          
         }
          else if (data[i].priority == 'Medium'){
           
-          cell4.innerHTML = '<i class="bi bi-thermometer-half h4" style = "color:yellow;"></i>'
+          cell5.innerHTML = '<i class="bi bi-thermometer-half h4" style = "color:yellow;"></i>'
          
         }if (data[i].priority == 'Low'){
           
-          cell4.innerHTML = '<i class="bi bi-thermometer-low h4" style = "color:green;"></i>'
+          cell5.innerHTML = '<i class="bi bi-thermometer-low h4" style = "color:green;"></i>'
          
         }
 
-
+          console.log(data[i].completed)
         if (data[i].completed == 'true' || data[i].completed == 1){
           
-          cell5.innerHTML = '<i "bi bi-check-circle h4" style = "color:green;"></i>'
+          cell6.innerHTML = '<i class="bi bi-check-circle h4" style = "color:green;"></i>'
          
         }
         else if (data[i].completed == 'false' || data[i].completed == 0)
         {
-        cell5.innerHTML = '<i class="bi bi-x-circle h4" style = "color:red" ></i>'
+        cell6.innerHTML = '<i class="bi bi-x-circle h4" style = "color:red" ></i>'
         }
 
         // Insert a link to details
@@ -117,8 +128,8 @@ function DisplayDetails() {
         btnDetailsnew.onclick = handleButtonClick;
         detailsCell.appendChild(btnDetailsnew);
 
-        // Insert a edit button 
-       /* const editCell = row.insertCell();
+        //Insert a edit button 
+       const editCell = row.insertCell();
         let btnEdit = document.createElement('button');
         btnEdit.className='editClass'  ;
         btnEdit.style.backgroundColor = 'transparent';
@@ -127,7 +138,7 @@ function DisplayDetails() {
         btnEdit.id = 'btnEditId';
         btnEdit.innerText = 'Edit';  
         btnEdit.onclick = handleButtonEdit;
-        editCell.appendChild(btnEdit);*/
+        editCell.appendChild(btnEdit);
 
       }     
     })
@@ -154,9 +165,9 @@ function DisplayDetails() {
   //const deadliname = this.parentNode.parentNode.firstElementChild.innerText;
   //const deadliname = this.parentNode.parentNode.childNodes.length;
   
-    var dsc = this.parentNode.parentNode.childNodes[0].innerText;
-    var endl = this.parentNode.parentNode.childNodes[1].innerText;
-    var catgy = this.parentNode.parentNode.childNodes[2].innerText;
+    var dsc = this.parentNode.parentNode.childNodes[1].innerText;
+    var endl = this.parentNode.parentNode.childNodes[2].innerText;
+    var catgy = this.parentNode.parentNode.childNodes[3].innerText;
    
 
   var exampleModal = getExampleModal();
@@ -219,7 +230,8 @@ function handleButtonEdit() {
   let CurrentStatus = '';
   let NewStatus = '';
    
-     var statusStr = this.parentNode.parentNode.childNodes[4].innerHTML;
+     var statusStr = this.parentNode.parentNode.childNodes[5].innerHTML;
+     taskid = this.parentNode.parentNode.childNodes[0].innerHTML;
 
      const substr = 'bi bi-x-circle';
 
@@ -239,7 +251,7 @@ function handleButtonEdit() {
    if (!exampleModal) { exampleModal = initExampleModal(); }
  
    var html =
-       '<div class="modal-header" style="background-color: black;">' +
+       '<div id="myModal" class="modal-header" style="background-color: black;">' +
          '<h5 class="modal-title" id="exampleModalLabel" style="color:white;" >Task Details</h5>' +
          '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
            '<span aria-hidden="true">&times;</span>' +
@@ -247,7 +259,7 @@ function handleButtonEdit() {
        '</div>' +
        '<div class="modal-body" style="background-color:rgb(158, 198, 233);">' +
        '<ul>'+ '<li> Current Status :' + CurrentStatus + '</li>' + '</br>' + '<li> Change to: '+ NewStatus + '</li>' + '</br>' +    
-         '<button type="button" class="btnYes" onclick = "updateStatusFunc" style = "width :7% ; align-items: center;margin-left: 10%; overscroll-behavior-block: rgb(147, 147, 235);">Yes</button >'  + '<button type="button" class="btnNo" style = "width :7% ; align-items: center;margin-left: 5%; overscroll-behavior-block: rgb(147, 147, 235);" data-dismiss="modal">No</button>' + 
+         '<button type="button" id = "newBtn" class="btnYes" onclick = "updateStatusFunc()" data-dismiss="modal" style = "width :7% ; align-items: center;margin-left: 10%; overscroll-behavior-block: rgb(147, 147, 235);">Yes</button >'  + '<button type="button" class="btnNo" style = "width :7% ; align-items: center;margin-left: 5%; overscroll-behavior-block: rgb(147, 147, 235);" data-dismiss="modal">No</button>' + 
          
       '</div>' + '<br>' + 
        '<div class="modal-footer" style="background-color:rgb(84, 188, 230);">' +
@@ -262,7 +274,25 @@ function handleButtonEdit() {
    jQuery(exampleModal).modal('show');
  
  }
- function updateStatusFunc()
+ async function updateStatusFunc()
  {
+  
+  console.log(taskid);
 
+  try{
+    const requestOptions = { 
+     
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ completed: 'true' })
+    } 
+    const response = await fetch("http://localhost:8083/api/todos/" + Number(taskid), requestOptions);
+    const data = await response.json();
+    console.log(data.updatedAt);
+    alert("Task status set to complete!")
+  }
+  catch(error)
+  {
+    alert("Error Updating the status");
+  }
  }
