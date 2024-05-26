@@ -128,10 +128,11 @@ select{
   }
 
   #logoclass{
+    margin-left: -580px;
     height: 50px;
     margin-top: 20;
     margin-bottom: -50px;
-     margin-left: 500;
+
     align-items: center;
   }
  

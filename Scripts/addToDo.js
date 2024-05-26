@@ -61,11 +61,14 @@ function AddDetails(){
     //collect all the dat from the form
     let selectID = dropdownId.value;
     let priorityID = document.querySelector('input[name="priority_set"]:checked') 
-    let description = document.getElementById("description").value;
-    let deadline = document.getElementById("deadline").value;
+    let description = document.getElementById("description");
+    let deadline = document.getElementById("deadline");
     let priority = priorityID.value;
 
-    if (description != '' && deadline != '' && priority != '') {
+    description.style.backgroundColor = "white";
+    deadline.style.backgroundColor = "white";
+
+    if (description.value != '' && deadline.value != '') {
       let datalog = {
         id: "",
         userid : selectID,
@@ -79,6 +82,12 @@ function AddDetails(){
         console.log(result);
     
    } else {
+    if (description.value == ''){
+    description.style.backgroundColor = "red"
+    }
+    if (deadline.value == ''){
+    deadline.style.backgroundColor = "red"
+    }
       alert("One or more fields are empty");
       return;
   }

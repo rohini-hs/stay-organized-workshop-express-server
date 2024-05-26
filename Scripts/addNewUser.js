@@ -14,20 +14,38 @@ window.onload = function () {
 
 function AddUserDetails() {
 
-    let newName = document.getElementById("addNewName").value;
-    let newUserName = document.getElementById("AddNewUserName").value;
-    let newPassword = document.getElementById("AddNewUserPassword").value;
+    let newName = document.getElementById("addNewName");
+    let newUserName = document.getElementById("AddNewUserName");
+    let newPassword = document.getElementById("AddNewUserPassword");
+    newName.style.backgroundColor = "white";
+    newUserName.style.backgroundColor = "white";
+    newPassword.style.backgroundColor = "white";
 
-    if (newName != '' && newUserName != '' && newPassword != '') {
+
+
+    if (newName.value != '' && newUserName.value != '' && newPassword.value != '') {
+       
         datalog = {
             id: "",
             name: document.getElementById("addNewName").value,
             username: document.getElementById("AddNewUserName").value,
             password: document.getElementById("AddNewUserPassword").value,
         }
-          
+
         btnAddUserClicked(datalog);
     } else {
+       
+        if (newName.value == '') {
+
+            newName.style.backgroundColor = "red";
+
+        } if (newUserName.value == '') {
+
+            newUserName.style.backgroundColor = "red";
+        } if (newPassword.value == '') {
+            newPassword.style.backgroundColor = "red";
+        }
+
         alert("One or more fields are empty");
         return;
     }
@@ -45,8 +63,8 @@ async function btnAddUserClicked(bodyData) {
         window.alert("Passwords mismatch!");
         return;
     }
-     
-    try{
+
+    try {
         response = await fetch("http://localhost:8083/api/users/", {
 
             method: "POST",
@@ -56,24 +74,23 @@ async function btnAddUserClicked(bodyData) {
             }
         })
         //.then(response => response.json())
-        let resJSON =response.json();
+        let resJSON = response.json();
         if (!resJSON.ok && response.status == '403') {
-          
-          alert("User already exists!")
-          return;
-        }
-        else{
+
+            alert("User already exists!")
+            return;
+        } else {
             // If the POST finishes successfully, display a message
             // with the newly assigned id
             let message = document.getElementById("message");
             message.innerHTML = ("New User " + bodyData.username + " added successfully!")
 
-        }}
-        catch (error) {
-            // TypeError: Failed to fetch
-            console.log('There was an error', error.status);
-          }
-	
+        }
+    } catch (error) {
+        // TypeError: Failed to fetch
+        console.log('There was an error', error.status);
+    }
+
 }
 
 function myFunction() {
@@ -85,24 +102,22 @@ function myFunction() {
     });
 }
 
- function checkUser() {
-  
+function checkUser() {
+
     fetch("http://localhost:8083/api/users/")
-    .then(Response => Response.json())
-    .then(data =>
-      {
-        for(let i=0; i<data.length; i++) 
-      {
-          //populate the dropdown with valid name
-          let theOption = new Option(data[i].name, data[i].id); 
-       
-          // append the option as a child of (inside) the select element
-          dropdownId.appendChild(theOption);
-  
-      }
-  
-     })
-     return 1;
-  
-    
+        .then(Response => Response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                //populate the dropdown with valid name
+                let theOption = new Option(data[i].name, data[i].id);
+
+                // append the option as a child of (inside) the select element
+                dropdownId.appendChild(theOption);
+
+            }
+
+        })
+    return 1;
+
+
 }

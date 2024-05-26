@@ -26,9 +26,28 @@
     <!--nav bar-->
 
     <style>
+        .dropdownBtn {
+            color: white;
+            outline: none;
+            background: rgb(19, 72, 84);
+
+            margin-top: 5%;
+            margin-left: 460px;
+            font-weight: 50px;
+            font-size: medium;
+            border-radius: 20px;
+            padding-left: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 30%;
+            border: none;
+        }
+
         .table {
             visibility: hidden;
             border-radius: 50%;
+            text-align: center;
+            border: 3px;
+            border-color: rgb(18, 51, 68);
         }
 
         .row {
@@ -45,10 +64,14 @@
         }
 
         #btnDetails {
-            margin-top: 5%;
-            background-color: rgb(207, 171, 241);
-            padding: 3%;
-            height: 6%;
+            margin-top: 2%;
+            background-color: rgb(110, 205, 219);
+            padding: 1%;
+            height: 5%;
+            text-align: center;
+            font-size: larger;
+            width: 50%;
+            font-family: 'Times New Roman', Times, serif;
 
         }
 
@@ -59,28 +82,44 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-left: 3%;
+            margin-left: 6%;
             justify-content: space-evenly;
-            border: 1px;
+            border: 3px;
             border-color: #4D4DDB;
             visibility: hidden;
         }
 
-        select {
-            flex: .55;
-            outline: none;
-            background: rgb(237, 143, 143);
-            padding: 10px;
-            margin-left: 0%;
-            margin-right: -9%;
-            font-weight: 50px;
-            font-size: medium;
-            border-radius: 30px;
-            padding-left: 20px;
 
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            align-items: left;
+        .form {
+
+            width: 650px;
+            justify-content: space-between;
         }
+
+        .form label {
+
+            /*display: inline-block;*/
+            display: inline-block;
+            width: 220px;
+            text-align: left;
+            justify-content: space-evenly;
+            padding: 2%;
+            margin-left: -12%;
+        }
+
+        .form input
+        {
+
+            /*display: inline-block;*/
+            justify-content: space-evenly;
+            width: 400px;
+            border-style: double;
+
+        }
+        .form select{
+                width : 60%;
+                margin-left: 1%;
+            }
 
         #myTable {
             text-align: left;
@@ -88,78 +127,14 @@
 
 
         body {
-            background-image: url('./Images/Stepup_new.png');
+            background-image: linear-gradient(to bottom right, white, rgb(121, 183, 202));
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        #StepUp {
 
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: rgb(17, 17, 105);
-            font-size: 400%;
-            margin-left: 10%;
-            margin-top: 5%;
-        }
-
-        #QuickTime {
-
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            color: rgb(17, 17, 105);
-            font-size: 100%;
-            margin-left: 20%;
-        }
-
-        #image {
-            margin-left: 18%;
-            margin-top: 3%;
-        }
-
-        #image img {
-            border-radius: 10%;
-            background-color: transparent;
-            height: 200;
-            justify-content: center;
-
-            display: flex;
-
-        }
-
-        #textSteup {
-            font-style: italic;
-            /*font-weight: 100;*/
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            /*margin-left: 15%;*/
-            padding-left: 10%;
-            margin-top: 5%;
-            max-width: 40.625rem;
-            font-size: 1.25vw;
-
-
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            #image {
-                margin-left: 18%;
-                margin-top: 10%;
-            }
-
-            #textSteup {
-                font-style: italic;
-                /*font-weight: 100;*/
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                /*margin-left: 15%;*/
-                padding: 10%;
-                margin-top: -2%;
-                max-width: 40.625rem;
-                margin-left: 5%;
-                font-size: 3vw;
-
-
-            }
-        }
+        @media only screen and (max-width: 600px) {}
 
         /*nav bar */
         * {
@@ -183,7 +158,7 @@
 
         header {
             /*background: #b178c7;*/
-            background: rgb(115, 70, 210);
+            background: rgb(35, 127, 135);
             color: white;
 
             padding: .5rem 0;
@@ -235,6 +210,58 @@
         }
 
         @media (max-width: 400px) {
+            #logoclass{
+                     margin: 5%;
+                     margin-bottom: -25px;
+            }
+
+            .form {
+
+                margin: 0 auto;
+                width: 210px;
+            }
+
+            .form label {
+
+                display: inline-block;
+                text-align: center;
+                margin-left: -30px;
+            }
+
+            .form select {
+                width: 140%;
+                margin-left: -22%;
+            }
+
+
+            .container {
+                width: 120%;
+
+               
+                background-position: center;
+                background-repeat: no-repeat;
+                /*background-size: cover;*/
+                margin-top: -25%;
+                margin-left: 3%;
+                justify-content: space-evenly;
+            }
+
+            .to-do-list {
+                width: 100%;
+                max-width: 700px;
+                padding: 10px 20px 20px;
+                background-color: rgb(195, 218, 227);
+                margin: 100px auto 20px;
+                border-radius: 10px;
+                margin-left: -10%;
+                text-align: center;
+                color: #050003;
+                font-size: medium;
+                font-style: oblique;
+                justify-content: space-evenly;
+
+            }
+
             .nav-container .logo {
                 font-size: 1.2rem;
                 z-index: 2;
@@ -277,7 +304,7 @@
                 right: 0;
             }
 
-           
+
             select {
                 width: 200%;
                 padding-left: -1%;
@@ -290,7 +317,27 @@
                 text-align: left;
             }
 
+            #myTable {
+            text-align: left;
+            width : 100%
+            }
+
+        .containerTable {
+            width: 90%;
+            /*background-color: rgb(158, 158, 226);*/
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 6%;
+            justify-content: space-evenly;
+            border: 3px;
+            border-color: #4D4DDB;
+            visibility: hidden;
         }
+        }
+
+        
 
 
 
@@ -306,14 +353,29 @@
 
             <nav class="nav">
                 <ul class="nav--ul__one">
-                    <li class="nav-link"><a href="index.html">Home</a></li>
-                    <li class="nav-link"><a href="#">About Us</a></li>
-                    <li class="nav-link"><a href="new_user.html">New User</a></li>
 
-                    <li class="nav-link"><a href="new-todo.html">New Task</a></li>
-                    <li class="nav-link"><a href="user-todos.html">ToDo-list</a></li>
-                    </ul>
-                
+                    <li class="nav-link"><a href="index copy.html"><i class="bi bi-house-door-fill"
+                                style="fill: green;"></i> Home</a>
+                    </li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-file-person-fill"></i> About Us</a></li>
+
+                    <div class="dropdown">
+                        <button class="dropdownBtn" type="button" data-toggle="dropdown"
+                            style="background-color: transparent; margin-top: -0px; height: -100px;width: 200px;margin-left: -30px;"><i
+                                class="bi bi-card-checklist"></i> Manage Tasks
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li class="nav-link"><a href="new_user copy.html"><i class="bi bi-people"></i> User
+                                    Registration</a></li>
+                            <li class="nav-link"><a href="new-todo copy 2.html"><i class="bi bi-view-list"></i></i> Add
+                                    Task</a></li>
+                            <li class="nav-link"><a href=""><i class="bi bi-card-checklist"></i> Awaiting
+                                    Tasks</a></li>
+                        </ul>
+                    </div>
+                </ul>
+
             </nav>
             <span class="hamburger-menu  material-symbols-outlined">menu</span>
         </div>
@@ -322,42 +384,53 @@
     <!--nav bar-->
 
 
-    <div class="containerNEW">
-
-
+    <div class="container">
         <div class="to-do-list">
 
-            <!--Add the dropdown button-->
-            <h3><b>To do lists</h3></b>
+            <img id="logoclass" src="./Images/dd logo.jpeg" >
+
+            <br>
+            <br>
+            <br>
             <br>
 
-            <div class="row">
-                <h4 style="margin-left: -30%;"> Select a user: </h4>
-                <br>
+            <!--Add the dropdown button-->
 
-                <select id="selectUser" style="margin-right: -30%;"></select>
-                <div>
+            <div id="Addvalue">
+
+
+                <div class="form">
+
+                    <label>Select a user: </label>
+
+                    <select id="selectUser"
+                        style=" border-radius: 0%; background-color: white; height: 40px;color:black;"></select>
+
+                    <input type="button" id="btnDetails" value="Show Tasks">
 
                 </div>
             </div>
-            <input type="button" id="btnDetails" value="Show Details">
         </div>
     </div>
+    <img src="./Images/pinboard copy.png" style="margin-left: 950px; margin-top: -200px; height: 60%;border-radius: 10%;position: fixed;">
     <div class="containerTable" id="containerTable">
         <div class="table-responsive">
             <table class="table" id="table">
                 <colgroup>
-                    <col span="1">
+                    <col span="2">
                     <col span="2" style="visibility: collapse">
+                    <col span="3">
                 </colgroup>
                 <thead>
                     <tr>
+                        <th>Task ID</th>
                         <th>Description</th>
                         <th>Deadline</th>
                         <th>Category</th>
                         <th>Priority</th>
                         <th>Status</th>
                         <th>Details</th>
+                        <th>Update</th>
                     </tr>
                 </thead>
 
@@ -365,7 +438,7 @@
         </div>
     </div>
 
-    </tablle>
+    
     <script src="./Scripts/ToDo.js">
 
     </script>

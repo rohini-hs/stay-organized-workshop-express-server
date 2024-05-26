@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--nav bar-->
 
     <link rel="stylesheet"
@@ -15,41 +20,54 @@
     <!--nav bar-->
 
     <style>
+        button {
+            color: white;
+            outline: none;
+            background: rgb(19, 72, 84);
+
+            margin-top: 5%;
+            margin-left: 460px;
+            font-weight: 50px;
+            font-size: medium;
+            border-radius: 20px;
+            padding-left: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 30%;
+            border: none;
+        }
+
         .form {
 
             margin: 0 auto;
-
-            width: 470px;
+            width: 650px;
             justify-content: space-between;
-
-
         }
 
         .form label {
 
             /*display: inline-block;*/
             display: inline-block;
-            width: 200px;
+            width: 220px;
             text-align: left;
             justify-content: space-evenly;
             padding: 2%;
-            margin-left: -10%;
+            margin-left: -12%;
         }
 
         .form input {
 
             /*display: inline-block;*/
             justify-content: space-evenly;
-            width: 250px;
+            width: 400px;
+            border-style: double;
 
         }
 
         @media (max-width: 600px) {
-            
+
             .form {
 
                 margin: 0 auto;
-
                 width: 210px;
             }
 
@@ -70,14 +88,19 @@
             }
         }
 
-            /*form*/
+        /*form*/
 
 
         #btnAddnewUser {
-            margin-top: 5%;
-            background-color: rgb(207, 171, 241);
-            padding: 3%;
-            height: 6%;
+            margin-top: 2%;
+            background-color: rgb(110, 205, 219);
+            padding: 1%;
+            height: 5%;
+            text-align: center;
+            font-size: larger;
+            width: 50%;
+            font-family: 'Times New Roman', Times, serif;
+
         }
 
         * {
@@ -88,7 +111,8 @@
         }
 
         body {
-            background-image: url('./Images/Stepup_new.png');
+            background-image: linear-gradient(to bottom right, white, rgb(121, 183, 202));
+          
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -105,7 +129,9 @@
 
         header {
             /*background: #b178c7;*/
-            background: rgb(115, 70, 210);
+            background: rgb(35, 127, 135);
+         
+
             color: white;
 
             padding: .5rem 0;
@@ -156,6 +182,63 @@
         }
 
         @media (max-width: 400px) {
+            #logoclass{
+                     margin: 5%;
+                     margin-bottom: -25px;
+            }
+
+            .form {
+
+                margin: 0 auto;
+                width: 210px;
+            }
+
+            .form label {
+
+                display: inline-block;
+                text-align: center;
+                margin-left: -30px;
+            }
+
+            .form input {
+
+                display: inline-block;
+                justify-content: center;
+                margin-left: -50px;
+                padding-left: 0px;
+                width: 300px
+            }
+
+            .container {
+                width: 120%;
+
+                background-image: url('./Images/Stepup_new.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                /*background-size: cover;*/
+                margin-top: -25%;
+                margin-left: 3%;
+                justify-content: space-evenly;
+            }
+
+            .to-do-list {
+                width: 100%;
+                max-width: 700px;
+                padding: 10px 20px 20px;
+                background-color: rgb(195, 218, 227);
+                margin: 100px auto 20px;
+                border-radius: 10px;
+                margin-left: -10%;
+                text-align: center;
+                color: #050003;
+                font-size: medium;
+                font-style: oblique;
+                justify-content: space-evenly;
+
+            }
+
+
+
             .nav-container .logo {
                 font-size: 1.2rem;
                 z-index: 2;
@@ -213,14 +296,28 @@
 
             <nav class="nav">
                 <ul class="nav--ul__one">
-                    <li class="nav-link"><a href="index.html">Home</a></li>
-                    <li class="nav-link"><a href="#">About Us</a></li>
-                    <li class="nav-link"><a href="new_user.html">New User</a></li>
 
-                    <li class="nav-link"><a href="new-todo.html">New Task</a></li>
-                    <li class="nav-link"><a href="user-todos.html">ToDo-list</a></li>
+                    <li class="nav-link"><a href="index copy.html"><i class="bi bi-house-door-fill"
+                                style="fill: green;"></i> Home</a>
+                    </li>
+                    <li class="nav-link"><a href="#"><i class="bi bi-file-person-fill"></i> About Us</a></li>
 
+                    <div class="dropdown">
+                        <button class="dropdownBtn" type="button" data-toggle="dropdown"
+                            style="background-color: transparent; margin-top: -0px; height: -100px;width: 200px;margin-left: -30px;"><i
+                                class="bi bi-card-checklist"></i> Manage Tasks
+                        </button>
 
+                        <ul class="dropdown-menu">
+                            <li class="nav-link"><a href=""><i class="bi bi-people"></i> User
+                                    Registration</a></li>
+                            <li class="nav-link"><a href="new-todo copy 2.html"><i class="bi bi-view-list"></i></i> Add
+                                    Task</a></li>
+                            <li class="nav-link"><a href="user-todos copy.html"><i class="bi bi-card-checklist"></i>
+                                    Awaiting
+                                    Tasks</a></li>
+                        </ul>
+                    </div>
                 </ul>
             </nav>
             <span class="hamburger-menu  material-symbols-outlined">menu</span>
@@ -233,7 +330,7 @@
 
     <div class="container">
         <div class="to-do-list">
-            <h3>Add New User  </h3>
+            <img id="logoclass" src="./Images/dd logo.jpeg" >
 
 
             <!--Add the dropdown button-->
@@ -246,38 +343,58 @@
 
             <div id="Addvalue">
 
-                <div class="blockHead">
-                    <!--Add category-->
-                    <br>
-
-                    <div class="form">
-
-                        <label>Name :</label>
-                        <input type="text" name="name" id="addNewName" required>
-                        <br>
-                        <label>User Name : </label>
-
-                        <input type="text" name="Uname" id="AddNewUserName" required>
-                        <br>
-                        <label>Password :</label>
-
-                        <input type="text" name="Password" id="AddNewUserPassword" required>
-                        <br>
-                        <label>Re-enter Password :</label>
-
-                        <input type="text" name="RetypePass" id="AddNewUserRePassword" required>
-
-                    </div>
-
-                </div>
+                <!--<div class="blockHead">-->
+                <!--Add category-->
                 <br>
 
-                <input type="button" id="btnAddnewUser" value="Add New User">
-                <div id ="message"></div>
-            </div>
+                <div class="form">
 
+                    <label>Full Name : <sup>*</sup></label>
+                    <input type="text" name="name" id="addNewName" placeholder="Full name" required>
+                    <br>
+                    <label>User Name : <sup>*</sup></label>
+
+                    <input type="text" name="Uname" id="AddNewUserName" placeholder="User Name" required>
+                    <br>
+
+                    <label>Password :<sup>*</sup></label>
+                    <input type="text" name="Password" id="AddNewUserPassword" placeholder="Password" required>
+
+                    <br>
+                    <label>Re-type Password :<sup>*</sup></label>
+
+                    <input type="text" name="RetypePass" id="AddNewUserRePassword" placeholder="Confirm Password"
+                        required>
+
+                </div>
+
+                <!-- </div>-->
+
+                <input type="button" id="btnAddnewUser" value="Register">
+                <div id="message" ></div>
+                <div style="text-align: left">
+                    <p style="text-align: left;">
+
+                        NOTE :
+                    </p>
+                    A Strong Password should -
+                    <p>
+                        <ol style="margin-left: 2%;">
+                            <li> Be at least 8 characters in length</li>
+                            <li> Contain both upper and lowercase alphabetic characters (e.g. A-Z, a-z)</li>
+                            <li> Have at least one numerical character (e.g. 0-9)</li>
+                            <li> Have at least one special character (e.g. ~!@#$%^&*()_-+=)</li>
+                        </ol>
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <div>
+             <img src="./Images/newuser.png" style="margin-left: 750px; margin-top: -500px; height: 60%;border-radius: 10%;">
+             
+            </div>
             <script src="./Scripts/addNewUser.js"></script>
-           
+
 </body>
 
 </HTML>
