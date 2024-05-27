@@ -26,6 +26,22 @@
     <!--nav bar-->
 
     <style>
+        tr:nth-child(even) {
+            background-color: rgb(120, 198, 231);
+        }
+
+
+        aside {
+            width: 50%;
+            margin-left: -70px;
+            margin-top: 80px;
+            float: right;
+            font-style: italic;
+            background-color:transparent;
+            height: 6px;
+            background-color: gray;
+        }
+
         .dropdownBtn {
             color: white;
             outline: none;
@@ -107,8 +123,7 @@
             margin-left: -12%;
         }
 
-        .form input
-        {
+        .form input {
 
             /*display: inline-block;*/
             justify-content: space-evenly;
@@ -116,10 +131,11 @@
             border-style: double;
 
         }
-        .form select{
-                width : 60%;
-                margin-left: 1%;
-            }
+
+        .form select {
+            width: 60%;
+            margin-left: 1%;
+        }
 
         #myTable {
             text-align: left;
@@ -210,9 +226,9 @@
         }
 
         @media (max-width: 400px) {
-            #logoclass{
-                     margin: 5%;
-                     margin-bottom: -25px;
+            #logoclass {
+                margin: 5%;
+                margin-bottom: -25px;
             }
 
             .form {
@@ -237,7 +253,7 @@
             .container {
                 width: 120%;
 
-               
+
                 background-position: center;
                 background-repeat: no-repeat;
                 /*background-size: cover;*/
@@ -318,33 +334,27 @@
             }
 
             #myTable {
-            text-align: left;
-            width : 100%
+                text-align: left;
+                width: 100%
             }
 
-        .containerTable {
-            width: 90%;
-            /*background-color: rgb(158, 158, 226);*/
-            background-color: transparent;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin-left: 6%;
-            justify-content: space-evenly;
-            border: 3px;
-            border-color: #4D4DDB;
-            visibility: hidden;
+            .containerTable {
+                width: 90%;
+                /*background-color: rgb(158, 158, 226);*/
+                background-color: transparent;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-left: 6%;
+                justify-content: space-evenly;
+                border: 3px;
+                border-color: #4D4DDB;
+                visibility: hidden;
+            }
         }
-        }
-
-        
-
-
 
         /*table related */
     </style>
-
-
 
 <body>
     <!--Nav bar-->
@@ -354,8 +364,8 @@
             <nav class="nav">
                 <ul class="nav--ul__one">
 
-                    <li class="nav-link"><a href="index.html"><i class="bi bi-house-door-fill"
-                                style="fill: green;"></i> Home</a>
+                    <li class="nav-link"><a href="index.html"><i class="bi bi-house-door-fill" style="fill: green;"></i>
+                            Home</a>
                     </li>
                     <li class="nav-link"><a href="#"><i class="bi bi-file-person-fill"></i> About Us</a></li>
 
@@ -382,12 +392,12 @@
     </header>
 
     <!--nav bar-->
-
-
+        
+              
     <div class="container">
         <div class="to-do-list">
 
-            <img id="logoclass" src="./Images/dd logo.jpeg" >
+            <img id="logoclass" src="./Images/dd logo.jpeg">
 
             <br>
             <br>
@@ -412,7 +422,11 @@
             </div>
         </div>
     </div>
+
     <img src="./Images/pinboard copy.png" style="margin-left: 950px; margin-top: -200px; height: 60%;border-radius: 10%;position: fixed;">
+ 
+
+     
     <div class="containerTable" id="containerTable">
         <div class="table-responsive">
             <table class="table" id="table">
@@ -437,7 +451,8 @@
             </table>
         </div>
     </div>
-
+                
+    
     
     <script src="./Scripts/ToDo.js">
 

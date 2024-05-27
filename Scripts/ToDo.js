@@ -3,6 +3,8 @@ let tableelement = document.getElementById("table");
 let containerTable = document.getElementById("containerTable");
 let buttondetails = document.getElementById("btnModal");
 let taskid = 0;
+let aside1 = document.getElementById("aside1")
+let aside2 = document.getElementById("aside2")
 
 window.onload = function () {
 
@@ -12,16 +14,9 @@ window.onload = function () {
   //get the handle of the button
   btnDetails = document.getElementById("btnDetails");
   btnDetails.onclick = DisplayDetails;
-  
+ 
 
-  $('#myModal').on('shown.bs.modal', function (event) {
-    $("#newBtn").trigger("click");  
-   });
-   
-    $("#newBtn").on("click",function(){
-    alert("button inside modal clicked");
-    
-    })
+
 }
 
 function initTodoDropdown() {
@@ -36,7 +31,6 @@ function initTodoDropdown() {
         // append the option as a child of (inside) the select element
         dropdownId.appendChild(theOption);
 
-
       }
 
     })
@@ -47,6 +41,7 @@ function initTodoDropdown() {
 function DisplayDetails() {
   //get the name from the select box and its id 
   let selectName = dropdownId.value;
+  
   let tableId = document.getElementById("table")
 
   var oRows = tableId.getElementsByTagName('tr');
@@ -75,6 +70,8 @@ function DisplayDetails() {
       if (data.length==0){
         alert("No records found!")
       }
+      //aside0.innerHTML = "Welcome "+ " ' " + dropdownId.options[dropdownId.value-1].text +  "'"
+      //aside1.innerHTML = "You have : " + data.length + " tasks."
 
       for (let i = 0; i < data.length; i++) {
         let row = tableId.insertRow(-1);
@@ -105,7 +102,6 @@ function DisplayDetails() {
          
         }
 
-          console.log(data[i].completed)
         if (data[i].completed == 'true' || data[i].completed == 1){
           
           cell6.innerHTML = '<i class="bi bi-check-circle h4" style = "color:green;"></i>'
@@ -139,6 +135,8 @@ function DisplayDetails() {
         btnEdit.innerText = 'Edit';  
         btnEdit.onclick = handleButtonEdit;
         editCell.appendChild(btnEdit);
+        
+
 
       }     
     })
@@ -290,6 +288,7 @@ function handleButtonEdit() {
     const data = await response.json();
     console.log(data.updatedAt);
     alert("Task status set to complete!")
+    
   }
   catch(error)
   {
